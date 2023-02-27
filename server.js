@@ -2,7 +2,6 @@
 const express = require('express');
 const app = express();
 
-const routes = require('./routes');
 const sequelize = require('./config/connection');
 const path = require('path');
 
@@ -19,9 +18,6 @@ app.use(express.urlencoded({ extended: true }));
 
 // use static resources in public folder
 app.use(express.static('public'));
-
-// turn on routes
-app.use(routes);
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {

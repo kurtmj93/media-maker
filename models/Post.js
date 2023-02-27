@@ -5,14 +5,15 @@ class Post extends Model{}
 
 Post.init(
  {
-    pics: {
-        type: DataTypes.STRING,
+    id: {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        allowNull: false,
+        primaryKey: true
     },
-    vids: {
-        type:DataTypes.STRING, 
-    },
-    message: {
-        type: DataTypes.STRING,
+    text: {
+        type: DataTypes.VARCHAR(255),
+        allowNull: false,
     }
     },
     {
