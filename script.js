@@ -1,4 +1,7 @@
 let welcomePage = document.querySelector("#welcomePage")
+let feed = document.querySelector("#feed");
+let profile = document.querySelector("#profile");
+
 
 document.querySelector("#signInButton").onclick = function(){
     welcomePage.style.display = "none";
@@ -6,4 +9,20 @@ document.querySelector("#signInButton").onclick = function(){
 
 document.querySelector("#createAccountButton").onclick = function(){
     welcomePage.style.display = "none";
+};
+
+
+
+document.querySelector("#smiley").onclick = function(){
+    feed.style.display = "none";
+    profile.style.display = "block";
+};
+
+document.querySelector("#newspaper").onclick = function(){
+    feed.style.display = "block";
+    profile.style.display = "none";
+};
+
+document.querySelector("#x").onclick = function(){
+    location.reload();
 };

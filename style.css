@@ -43,14 +43,6 @@
     margin-top: -30px;
   }
   
-  #feed {
-    height: 1000px;
-    width: 700px;
-    background-color: rgb(0, 204, 255);
-    margin: auto;
-    margin-top: 20px;
-  }
-  
   #settings {
     position: fixed;
     margin-bottom: 50px;
@@ -60,7 +52,8 @@
     position: relative;
     margin: auto;
     width: 200px;
-    margin-top: 600px;
+    margin-top: 400px;
+    margin-bottom: 20px;
   }
 
   #users {
@@ -87,25 +80,38 @@
 
 
 
-  #createAccount {
-    width: 200px;
-    height: 200px;
-    background-color: rgb(150, 22, 22);
+
+
+
+
+
+
+
+
+
+
+
+
+  #feed {
+    height: 1000px;
+    width: 700px;
+    background-color: rgb(0, 204, 255);
     margin: auto;
-    position: absolute;
-    z-index: 1;
-    bottom: 000px;
-    left: 300px;
+    margin-top: 20px;
+    z-index: -1;
+    display:block;
   }
+
   #profile {
-    width: 200px;
-    height: 200px;
+    width: 700px;
+    height: 1000px;
     background-color: rgb(37, 150, 22);
-    margin: auto;
+    z-index: 0;
+    display: block;
+    position: relative;
+    left: 205px;
     position: absolute;
-    z-index: 1;
-    bottom: 000px;
-    left: 400px;
+    margin-top: 144px;
   }
 
 
@@ -135,7 +141,7 @@
     z-index: 2;
     margin: auto;
     position: fixed;
-    display: none;
+    display: block;
   }
 
 #logoWelcome {
