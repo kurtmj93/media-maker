@@ -85,16 +85,7 @@
     right: 470px;
   }
 
-  #signIn {
-    width: 200px;
-    height: 200px;
-    background-color: rgb(216, 122, 122);
-    margin: auto;
-    position: absolute;
-    z-index: 2;
-    bottom: 000px;
-    left: 200px;
-  }
+
 
   #createAccount {
     width: 200px;
@@ -102,18 +93,66 @@
     background-color: rgb(150, 22, 22);
     margin: auto;
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     bottom: 000px;
     left: 300px;
   }
-
   #profile {
     width: 200px;
     height: 200px;
     background-color: rgb(37, 150, 22);
     margin: auto;
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     bottom: 000px;
     left: 400px;
   }
+
+
+
+
+
+
+
+
+
+
+  #signIn {
+    display: flex;
+    flex-direction: column;
+    margin-top: -25%;
+    width: 30rem;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    padding-top: 270px;
+  }
+
+  #welcomePage {
+    background-color: rgb(1, 171, 177);
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    margin: auto;
+    position: fixed;
+    display: none;
+  }
+
+#logoWelcome {
+  width: 30rem;
+}
+
+
+
+
+.defaultSmiley {
+  width: 40px;
+}
+
+#photoIcon {
+  width: 40px;
+}
+
+#bookIcon {
+  width: 40px;
+}
