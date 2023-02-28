@@ -31,7 +31,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
     try {
       const newPost = await Post.create({
-        ...req.body,
+        text: req.body.text,
         user_id: req.session.user_id,
       });
   

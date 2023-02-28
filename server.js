@@ -11,7 +11,9 @@ const routes = require('./controllers');
 // connect to db
 const sequelize = require('./config/connection');
 // connect express session to db
-const SequelizeStore = require('connect-session-sequelize');
+const SequelizeStore = require('connect-session-sequelize')(
+  session.Store
+);
 
 // process.env.PORT allows heroku to set the port
 let port = process.env.PORT;
@@ -19,7 +21,6 @@ let port = process.env.PORT;
 if (port == null || port == "") {
   port = 3001;
 }
-
 
 // set and use session connection info
 const sess = {
@@ -44,5 +45,5 @@ app.use(routes);
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+  app.listen(port, () => console.log('Now listening'));
 });
