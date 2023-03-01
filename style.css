@@ -1,0 +1,195 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+  
+  body {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+      background-color: #002fff;
+  }
+  
+  #newspaper {
+    height: 50px;
+  }
+  
+  #smiley {
+    height: 50px;
+  }
+  
+  #x {
+    height: 50px;
+  }
+  
+  header {
+    width: 100%;
+  }
+  
+  header div {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  #navbar {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+  }
+  
+  #logo {
+    display: block;
+    height: 100px;
+    margin: auto;
+    margin-top: -30px;
+  }
+  
+  #settings {
+    position: fixed;
+    margin-bottom: 50px;
+  }
+  
+  footer {
+    position: relative;
+    margin: auto;
+    width: 200px;
+    margin-top: 400px;
+    margin-bottom: 20px;
+  }
+
+  #users {
+    width: 100px;
+    height: 100px;
+  }
+
+  #rightPanel {
+    background-color: brown;
+    width: 200px;
+    margin: auto;
+    margin-top: -700px;
+    position: relative;
+    right: -460px;
+  }
+
+  #leftPanel {
+    background-color:rgb(23, 130, 156);
+    width: 200px;
+    margin: auto;
+    position: relative;
+    right: 470px;
+    margin-top: -700px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+  #feed {
+    height: 1000px;
+    width: 700px;
+    background-color: rgb(0, 204, 255);
+    margin: auto;
+    margin-top: 20px;
+    z-index: -1;
+    display:block;
+  }
+
+  #profile {
+    width: 700px;
+    height: 1000px;
+    background-color: rgb(37, 150, 22);
+    z-index: 0;
+    display: none;
+    position: relative;
+    left: 205px;
+    position: absolute;
+    margin-top: 144px;
+  }
+
+
+
+
+
+
+
+
+
+
+  #signIn {
+    display: flex;
+    flex-direction: column;
+    margin-top: -25%;
+    width: 30rem;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    padding-top: 270px;
+  }
+
+  #welcomePage {
+    background-color: rgb(1, 171, 177);
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    margin: auto;
+    position: fixed;
+    display: block;
+  }
+
+#logoWelcome {
+  width: 30rem;
+}
+
+
+
+
+.defaultSmiley {
+  width: 40px;
+}
+
+#photoIcon {
+  width: 40px;
+}
+
+#bookIcon {
+  width: 40px;
+}
+
+
+
+#batmanone {
+  width: 40px;
+}
+
+#supermanone {
+  width: 40px;
+}
+
+#greenlanternone {
+  width: 40px;
+}
+
+#batmantwo {
+  width: 40px;
+  
+}
+
+#supermantwo {
+  width: 40px;
+}
+
+#greenlanterntwo {
+  width: 40px;
+}
+
+
+
+.border {
+  border: 5px solid #4be025;
+}
+
