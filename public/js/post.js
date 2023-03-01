@@ -7,10 +7,12 @@ const newPostForm = async function(event) {
     await fetch(`/api/posts`, {
       method: 'POST',
       body: JSON.stringify({
-        newPost
+        text: newPost,
       }),
       headers: { 'Content-Type': 'application/json' },
     });
+
+    document.location.reload();
   
 };
   
