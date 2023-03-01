@@ -26,3 +26,15 @@ document.querySelector("#newspaper").onclick = function(){
 document.querySelector("#x").onclick = function(){
     location.reload();
 };
+
+
+
+batman = document.querySelector("#batmantwo");
+superman = document.querySelector("#supermantwo");
+greenlantern = document.querySelector("#greenlanterntwo");
+
+function batmanBorder () {
+    batman.classList.toggle("border");
+};
+
+batman.addEventListener("click", batmanBorder);
