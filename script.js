@@ -14,8 +14,7 @@ document.querySelector("#createAccountButton").onclick = function(){
 
 
 document.querySelector("#smiley").onclick = function(){
-    feed.style.display = "none";
-    profile.style.display = "block";
+    
 };
 
 document.querySelector("#newspaper").onclick = function(){
