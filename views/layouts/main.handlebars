@@ -9,19 +9,6 @@
   </head>
 
   <body>
-  <div id="welcomePage">
-    <div id="signIn">
-      <img id="logoWelcome" src="images/mediamaker_logo.png" />
-      <input type="text" value="Email">
-      <input type="text" value="Username">
-      <input type="text" value="Password">
-      <button id="signInButton">Sign In</button>
-      <button id="createAccountButton">Create Account</button>
-    </div>
-  </div>
-
-    
-
     <header>
       <div>
         <ul id="navbar">
@@ -38,10 +25,10 @@
             />
           </li>
           <li>
-            <img
+            <a id="logout" href="#"><img
               id="x"
               src="images/76-760200_big-red-x-red-x-mark-transparent-background-3144257813.png"
-            />
+            /></a>
           </li>
         </ul>
       </div>
@@ -51,8 +38,8 @@
 
 
 
-      <div id="feed">
-        {{{ body }}}
+      <div id="main">
+        {{{ body  }}}
       </div>
 
       <script>
@@ -69,12 +56,6 @@
     
 
     <div id="leftPanel">
-      <button>Upload</button>
-      <div id="date">
-        <p>Date</p>
-        
-        <input type="text" value="00/00/00">
-      </div>
       <div>
         <p>Following</p>
         <img id="batmantwo" src="images/profilePictures/batman.jpg">
@@ -86,13 +67,12 @@
         <img id="photoIcon" src="images/camerapng.parspng.com-2.png">
         <img id="bookIcon" src="images/lovepik-book-book-png-image_400238641_wh1200.png">
       </div>
-      <button>Apply</button>
     </div>
 
     <footer>
       <p>(C) MediaMaker 2023</p>
     </footer>
   
-  <script src="script.js"></script>
+  <script src="/js/logout.js"></script>
   </body>
 </html>
