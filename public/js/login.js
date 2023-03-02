@@ -14,7 +14,7 @@ const userLoginForm = async function(event) {
   });
 
   if (response.ok) {
-    document.location.replace('/dashboard');
+    document.location.reload();
   } else {
     alert('Your username or password may be incorrect.');
   }

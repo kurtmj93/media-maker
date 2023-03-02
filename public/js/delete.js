@@ -5,6 +5,8 @@ const deletePost = async function() {
     method: 'DELETE'
   });
 
+  document.location.reload();
+
 };
 
 document
