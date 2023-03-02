@@ -31,3 +31,12 @@ router.get('/feed', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+router.get('/signup', async (req, res) => {
+
+    if (req.session.loggedIn) { // check if loggedin
+        res.redirect('/feed');
+        return;
+      }
+    res.render('signup');
+});

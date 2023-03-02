@@ -16,7 +16,7 @@ const newUserForm = async function(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location.replace('/feed');
     } else {
       alert('Failed to sign up');
     }
