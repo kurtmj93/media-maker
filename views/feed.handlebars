@@ -1,0 +1,27 @@
+<div class="post card">
+  <div class="card-header">
+    <h2>Create New Post</h2>
+  </div>
+  <p>
+  <form id="new-post-form" class="card-body">
+
+    <label class="form-label" for="post-text">What's on your mind?</label>
+    <textarea name="post-text" class="form-input"></textarea>
+
+    <button type="submit" class="btn">Post</button>
+  </form>
+  </p>
+</div>
+
+<script src="/js/post.js"></script>
+
+<div class="posts">
+  {{#each posts}}
+  <article class="card">
+    <p>{{ text }}</p>
+    <p>
+        Posted by {{user.username}} on {{formatDate date_created}}
+    </p>
+  </article>
+  {{/each}}
+</div>

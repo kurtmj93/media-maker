@@ -8,7 +8,7 @@ var transporter = nodemailer.createTransport({
 });
 
 var mailOptions = {
-  from: 'youremail@gmail.com',
+  from: 'mediamaker804@hotmail.com',
   to: 'clayton.wilkey@yahoo.com',
   subject: 'New Account',
   text: 'Welcome to Media Maker!'

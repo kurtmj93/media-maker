@@ -1,10 +1,11 @@
 const router = require('express').Router();
-const { Post } = require('../../models');
+const { Post, User } = require('../../models');
+const getAuth = require('../../utils/auth');
 
 // get all posts
 router.get('/', async (req, res) => {
     try {
-        const posts = await Post.findAll();
+        const posts = await Post.findAll({ include: { model: User, attributes: ['username'] } });
         res.status(200).json(posts);
     } catch (err) {
         console.log(err);
@@ -15,7 +16,7 @@ router.get('/', async (req, res) => {
 // get one post
 router.get('/:id', async (req, res) => {
     try {
-      const post = await Post.findByPk(req.params.id);
+      const post = await Post.findByPk(req.params.id, {include: { model: User, attributes: ['username'] } });
       
       if (!post) { // return specific error if there is no product found with this id
         res.status(404).json({ message: 'No post found with this id!' });
@@ -28,7 +29,7 @@ router.get('/:id', async (req, res) => {
   });
 
 // create a new post
-router.post('/', async (req, res) => {
+router.post('/', getAuth, async (req, res) => {
     try {
       const newPost = await Post.create({
         text: req.body.text,
@@ -43,12 +44,11 @@ router.post('/', async (req, res) => {
 
 // delete a post
   
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', getAuth, async (req, res) => {
     try {
       const postData = await Post.destroy({
         where: {
           id: req.params.id,
-          user_id: req.session.user_id,
         },
       });
   
@@ -57,7 +57,7 @@ router.delete('/:id', async (req, res) => {
         return;
       }
   
-      res.status(200).json(postData);
+      res.status(200).end();
     } catch (err) {
       res.status(500).json(err);
     }
