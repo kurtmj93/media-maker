@@ -99,19 +99,7 @@
     display:block;
   }
 
-  #profile {
-    width: 700px;
-    height: 1000px;
-    background-color: rgb(37, 150, 22);
-    z-index: 0;
-    display: none;
-    position: relative;
-    left: 205px;
-    position: absolute;
-    margin-top: 144px;
-  }
-
-
+  
 
 
 
