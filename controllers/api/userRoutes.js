@@ -3,6 +3,10 @@ const { User } = require('../../models');
 const getAuth = require('../../utils/auth');
 const nodemailer = require('nodemailer');
 
+// require and set API key for sendgrid - to be used for heroku to send emails
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
 // get all users
 router.get('/', async (req, res) => {
   try {
@@ -30,28 +34,20 @@ router.post('/', async (req, res) => {
       res.status(200).json(dbUserData);
     });
 
-    var transporter = nodemailer.createTransport({
-      service: 'outlook',
-      auth: {
-        user: 'mediamaker804@hotmail.com',
-        pass: 'TpI2H4U101!'
+    const msg = {
+        to: req.body.email, // Change to your recipient
+        from: 'mediamaker1337@gmail.com', // Change to your verified sender
+        subject: 'Thank you for creating an account!',
+        text: 'Welcome to Media Maker, ' + req.body.username,
       }
-    });
-    
-    var mailOptions = {
-      from: 'mediamaker804@hotmail.com',
-      to: req.body.email,
-      subject: 'New Account',
-      text: 'Welcome to Media Maker, ' + req.body.username,
-    };
-    
-    transporter.sendMail(mailOptions, function(error, info){
-      if (error) {
-        console.log(error);
-      } else {
-        console.log('Email sent: ' + info.response);
-      }
-    });
+      sgMail
+        .send(msg)
+        .then(() => {
+          console.log('Email sent')
+        })
+        .catch((error) => {
+          console.error(error)
+        })
 
   } catch (err) {
     console.log(err);
