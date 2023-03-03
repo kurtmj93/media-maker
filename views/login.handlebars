@@ -1,19 +1,43 @@
-<div class="card">
-  <div class="card-header">
-    <h2>Login</h2>
+
+<section class="hero is-info mt-6">
+  <div class="hero-body">
+    <p class="title">
+      Welcome to MediaMaker
+    </p>
+    <p class="subtitle">
+      Login
+    </p>
   </div>
-  <form id="login-form" class="card-body">
-    <div>
-      <label for="login-username">Username</label>
-      <input type="text" id="login-username" />
+</section>
+
+<form id="login-form" class="box mb-6">
+    <div class="field">
+      <label class="label" for="login-username">Username</label>
+      <div class="control has-icons-left">
+      <input class="input" type="text" id="login-username" />
+      <span class="icon is-small is-left">
+      <i class="fas fa-user"></i>
+    </span>
+      </div>
     </div>
-    <div>
-      <label for="password-input-login" class="form-label">Password</label>
-      <input type="password" id="login-password" />
+    <div class="field">
+      <label class="label" for="login-password" class="form-label">Password</label>
+      <div class="control has-icons-left">
+      <input class="input" type="password" id="login-password" />
+      <span class="icon is-small is-left">
+      <i class="fas fa-lock"></i>
+    </span>
+      </div>
     </div>
-    <button type="submit" id="login-btn" class="btn">Login</button>
-    <a type="button" href="/signup">Create an account</a>
-  </form>
+
+    <div class="field is-grouped">
+  <div class="control">
+    <button type="submit" class="button is-link">Submit</button>
+  </div>
+  <a class="button is-link is-light" href="/signup">Create an Account</a>
 </div>
+  </form>
+
+
 
 <script src="/js/login.js"></script>
