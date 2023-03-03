@@ -21,6 +21,7 @@ const newUserForm = async function(event) {
       alert('Failed to sign up');
     }
   };
+
   
   document
     .querySelector('#signup-form')

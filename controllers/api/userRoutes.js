@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const getAuth = require('../../utils/auth');
+const nodemailer = require('nodemailer');
 
 // get all users
 router.get('/', async (req, res) => {
@@ -27,6 +29,30 @@ router.post('/', async (req, res) => {
 
       res.status(200).json(dbUserData);
     });
+
+    var transporter = nodemailer.createTransport({
+      service: 'outlook',
+      auth: {
+        user: 'mediamaker804@hotmail.com',
+        pass: 'TpI2H4U101!'
+      }
+    });
+    
+    var mailOptions = {
+      from: 'mediamaker804@hotmail.com',
+      to: req.body.email,
+      subject: 'New Account',
+      text: 'Welcome to Media Maker, ' + req.body.username,
+    };
+    
+    transporter.sendMail(mailOptions, function(error, info){
+      if (error) {
+        console.log(error);
+      } else {
+        console.log('Email sent: ' + info.response);
+      }
+    });
+
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -81,6 +107,25 @@ router.post('/login', async (req, res) => {
       });
     } else {
       res.status(404).end();
+    }
+  });
+
+  router.delete('/:id', getAuth, async (req, res) => {
+    try {
+      const userData = await User.destroy({
+        where: {
+          id: req.params.id,
+        },
+      });
+  
+      if (!userData) {
+        res.status(404).json({ message: 'No user found with this id!' });
+        return;
+      }
+  
+      res.status(200).end();
+    } catch (err) {
+      res.status(500).json(err);
     }
   });
   

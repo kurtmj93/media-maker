@@ -27,12 +27,8 @@
     "bcrypt": "^5.1.0",
     "connect-session-sequelize": "^7.1.5",
     "dotenv": "^16.0.3",
-<<<<<<< HEAD
+    "express-handlebars": "^7.0.1",
     "express-session": "^1.17.3",
     "nodemailer": "^6.9.1"
-=======
-    "express-handlebars": "^7.0.1",
-    "express-session": "^1.17.3"
->>>>>>> 93fd053f817646aee5923705d7f4b8cc9df9de83
   }
 }
