@@ -26,7 +26,10 @@ router.get('/feed', async (req, res) => {
 
         const posts = postData.map((post => post.get ({ plain: true })));
         console.log(posts);
-        res.render('feed', { posts });
+        res.render('feed', 
+        { posts, 
+          loggedIn: req.session.loggedIn // passes this info to handlebars render so it can be used as a conditional
+        }); 
     } catch (err) {
         res.status(500).json(err);
     }

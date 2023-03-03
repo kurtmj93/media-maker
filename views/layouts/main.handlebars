@@ -5,74 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MediaMaker</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
     <link rel="stylesheet" href="/css/style.css" />
   </head>
 
   <body>
     <header>
-      <div>
-        <ul id="navbar">
-          <li>
-            <img
-              id="newspaper"
-              src="images/newspaper-png--1600-813841397.png"
-            />
-          </li>
-          <li>
-            <img
-              id="smiley"
-              src="images/blue-smiley-emoji-emoticons-hd-png-vln1wB-1186553093.png"
-            />
-          </li>
-          <li>
-            <a id="logout" href="#"><img
-              id="x"
-              src="images/76-760200_big-red-x-red-x-mark-transparent-background-3144257813.png"
-            /></a>
-          </li>
-        </ul>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img src="images/mediamaker_logo.png" width="112" height="28">
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="/">
+        Home
+      </a>
+
+      <a class="navbar-item" href="https://github.com/kurtmj93/media-maker#readme">
+        Documentation
+      </a>
       </div>
-      <img id="logo" src="images/mediamaker_logo.png" />
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          {{#if loggedIn}}
+          <a class="button is-light" id="logout" href="/">
+            Log out
+          </a>
+          {{ else }}
+          <a class="button is-primary" href="/signup">
+            <strong>Sign up</strong>
+          </a>
+          <a class="button is-light" href="/">
+            Log in
+          </a>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
     </header>
 
 
 
 
-      <div id="main">
-        {{{ body  }}}
+      <div class="container">
+        {{{  body  }}}
       </div>
-
-      <script>
-        <li>
-          
-        </li>
-      </script>
-      
-      
-
-
-
-
-    
-
-    <div id="leftPanel">
-      <div>
-        <p>Following</p>
-        <img id="batmantwo" src="images/profilePictures/batman.jpg">
-        <img id="supermantwo" src="images/profilePictures/superman.jpg">
-        <img id="greenlanterntwo" src="images/profilePictures/greenlantern.jpg">
-      </div>
-      <div>
-        <p>Content</p>
-        <img id="photoIcon" src="images/camerapng.parspng.com-2.png">
-        <img id="bookIcon" src="images/lovepik-book-book-png-image_400238641_wh1200.png">
-      </div>
-    </div>
-
-    <footer>
-      <p>(C) MediaMaker 2023</p>
+</div>
+    <footer class="footer mt-6">
+      <div class="content has-text-centered" >MediaMaker is a collaboration by Kurt Jensen, Galen Ross and Clayton Wilkey. The source code is licensed
+      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.</p>
     </footer>
   
   <script src="/js/logout.js"></script>
+  <script src="https://kit.fontawesome.com/b2ad43cfb5.js" crossorigin="anonymous"></script>
   </body>
 </html>

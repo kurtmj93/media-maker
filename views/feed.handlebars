@@ -1,27 +1,52 @@
-<div class="post card">
-  <div class="card-header">
-    <h2>Create New Post</h2>
+
+<section class="hero is-success mt-6">
+  <div class="hero-body">
+    <p class="title">
+      The Feed™
+    </p>
+    <p class="subtitle">
+      Make Your Social Media Better
+    </p>
   </div>
-  <p>
-  <form id="new-post-form" class="card-body">
+</section>
 
-    <label class="form-label" for="post-text">What's on your mind?</label>
-    <textarea name="post-text" class="form-input"></textarea>
+<div class="columns">
+  <aside class="column is-one-third mt-6">
+    <form id="new-post-form" class="box">
+      <div class="field">
+      <label class="label" for="post-text">What's on your mind?</label>
+      <textarea name="post-text" class="textarea"></textarea>
+      </div>
+      <div class="control">
+    <button type="submit" class="button is-link">SEND</button>
+    </div>
+    </form>
+  </aside>
 
-    <button type="submit" class="btn">Post</button>
-  </form>
-  </p>
+<div class="column is-two-thirds mt-6">
+
+  {{#each posts}}
+
+  <div class="card block">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-48x48">
+          <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="media-content">
+        <p class="title is-4">{{ text }}</p>
+        <p class="subtitle">@{{user.username}} on <time datetime="{{date_created}}">{{ formatDate date_created}}</time></p>
+        
+      </div>
+    </div>
+  </div>
+</div>
+  {{/each}}
+</main>
+
 </div>
 
 <script src="/js/post.js"></script>
-
-<div class="posts">
-  {{#each posts}}
-  <article class="card">
-    <p>{{ text }}</p>
-    <p>
-        Posted by {{user.username}} on {{formatDate date_created}}
-    </p>
-  </article>
-  {{/each}}
-</div>
+<script src="/js/delete.js"></script>

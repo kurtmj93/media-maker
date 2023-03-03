@@ -1,25 +1,51 @@
-<div class="card">
-  <div class="card-header">
-    <h2>Sign Up</h2>
+<section class="hero is-primary mt-6">
+  <div class="hero-body">
+    <p class="title">
+      Welcome to MediaMaker
+    </p>
+    <p class="subtitle">
+      Create an Account
+    </p>
   </div>
-  <div id="signup">
-    <form id="signup-form" class="card-body">
-      <div>
-        <label for="signup-username">Username</label>
-        <input type="text" id="signup-username" />
+</section>
+
+<form id="signup-form" class="box mb-6">
+    <div class="field">
+      <label class="label" for="signup-username">Username</label>
+      <div class="control has-icons-left">
+      <input class="input" type="text" id="signup-username" />
+      <span class="icon is-small is-left">
+      <i class="fas fa-user"></i>
+    </span>
       </div>
-      <div>
-        <label for="signup-email">Email</label>
-        <input type="email" id="signup-email" />
+    </div>
+    <div class="field">
+      <label class="label" for="signup-email">Email</label>
+      <div class="control has-icons-left">
+      <input class="input" type="text" id="signup-email" />
+      <span class="icon is-small is-left">
+      <i class="fas fa-envelope"></i>
+    </span>
       </div>
-      <div>
-        <label for="signup-password">Password</label>
-        <input type="password" id="signup-password" />
+    </div>
+    <div class="field">
+      <label class="label" for="signup-password" class="form-label">Password</label>
+      <div class="control has-icons-left">
+      <input class="input" type="password" id="signup-password" />
+      <span class="icon is-small is-left">
+      <i class="fas fa-lock"></i>
+    </span>
       </div>
-      <button type="submit" id="signup-btn" class="btn" >Signup!</button>
-      <a href="/">Already have an account? Login</a>
-    </form>
+    </div>
+
+    <div class="field is-grouped">
+  <div class="control">
+    <button type="submit" class="button is-link">Sign up</button>
   </div>
+  <a class="button is-link is-light" href="/">Already have an account? Login</a>
 </div>
+  </form>
+
+
 
 <script src="/js/signup.js"></script>
