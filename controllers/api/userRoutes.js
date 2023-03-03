@@ -106,7 +106,7 @@ router.post('/login', async (req, res) => {
     }
   });
 
-  router.delete('/:id', getAuth, async (req, res) => {
+  router.delete('/:id', async (req, res) => {
     try {
       const userData = await User.destroy({
         where: {
