@@ -21,14 +21,17 @@ router.get('/feed', async (req, res) => {
 
     try {
         const postData = await Post.findAll({
+            limit: 20, 
+            order: [[ 'date_created', 'DESC' ]],
             include: { model: User, attributes: ['username'] }
         });
 
         const posts = postData.map((post => post.get ({ plain: true })));
-        console.log(posts);
+        console.log(req.session.user);
         res.render('feed', 
         { posts, 
-          loggedIn: req.session.loggedIn // passes this info to handlebars render so it can be used as a conditional
+          loggedIn: req.session.loggedIn, // passes this info to handlebars render so it can be used as a conditional
+          user_id: req.session.userid
         }); 
     } catch (err) {
         res.status(500).json(err);

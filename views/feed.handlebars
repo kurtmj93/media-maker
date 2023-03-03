@@ -37,8 +37,8 @@
       </div>
       <div class="media-content">
         <p class="title is-4">{{ text }}</p>
-        <p class="subtitle">@{{user.username}} on <time datetime="{{date_created}}">{{ formatDate date_created}}</time></p>
-        
+        <p class="subtitle">@{{user.username}} on <time datetime="{{date_created}}">{{ formatDate date_created }}</time></p>
+        <button class="delete" id="delete" href="/{{ id }}"></button>
       </div>
     </div>
   </div>
@@ -49,4 +49,3 @@
 </div>
 
 <script src="/js/post.js"></script>
-<script src="/js/delete.js"></script>
